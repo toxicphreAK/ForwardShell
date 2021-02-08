@@ -69,7 +69,7 @@ class WebShell(object):
         # Set up chunk size for file upload
         # 1850 used for GET and anything else
         self.chunk_size = 1850
-        if self.method == "post":
+        if self.method == "POST":
             self.chunk_size = 80000
 
         # Set up binary paths
@@ -516,7 +516,7 @@ class WebShell(object):
         data = {self.parameter: payload}
 
         try:
-            if self.method == "post":
+            if self.method == "POST":
                 r = requests.post(
                     self.url,
                     data=data,
@@ -524,7 +524,7 @@ class WebShell(object):
                     proxies=self.proxies,
                     timeout=timeout,
                 )
-            elif self.method == "get":
+            elif self.method == "POST":
                 r = requests.get(
                     self.url,
                     params=data,
