@@ -67,12 +67,10 @@ class WebShell(object):
             self.interval = 1  # == fast
 
         # Set up chunk size for file upload
+        # 1850 used for GET and anything else
+        self.chunk_size = 1850
         if self.method == "post":
             self.chunk_size = 80000
-        elif self.method == "get":
-            self.chunk_size = 1850
-        else:
-            self.chunk_size = 1850
 
         # Set up binary paths
         self.BASH = "/bin/bash"
