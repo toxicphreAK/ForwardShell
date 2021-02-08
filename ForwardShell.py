@@ -757,9 +757,7 @@ if __name__ == "__main__":
     print("[*] Type ? for help")
     while True:
         cmd = input(prompt).lower()
-        if not cmd:
-            pass
-        else:
+        if cmd:
             CustomInput = cmd.split()
             Option = CustomInput[0]
             if Option == "?":
