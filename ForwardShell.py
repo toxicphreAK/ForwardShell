@@ -49,10 +49,9 @@ class WebShell(object):
         self.ncversion = ''
         
         # Set up proxy
-        if options.p:
-            self.proxies = {'http' : f'{options.P}'}
-        else:
             self.proxies = {}
+        if options.p:
+            self.proxies = {"http": f"{options.P}"}
         
         # Set up network speed
         if options.speed.strip().lower() == 'insane':
