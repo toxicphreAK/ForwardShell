@@ -55,16 +55,16 @@ class WebShell(object):
             self.proxies = {"http": f"{options.P}"}
 
         # Set up network speed
-        if options.speed.strip().lower() == "insane":
+        self.interval = 1  # == fast
+        speed = options.speed.strip().lower()
+        if speed == "insane":
             self.interval = 0.25
-        elif options.speed.strip().lower() == "fast":
+        elif speed == "fast":
             self.interval = 1
-        elif options.speed.strip().lower() == "medium":
+        elif speed == "medium":
             self.interval = 1.5
-        elif options.speed.strip().lower() == "slow":
+        elif speed == "slow":
             self.interval = 3
-        else:
-            self.interval = 1  # == fast
 
         # Set up chunk size for file upload
         # 1850 used for GET and anything else
