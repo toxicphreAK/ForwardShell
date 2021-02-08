@@ -593,14 +593,8 @@ class WebShell(object):
         try:
             if show_debug_messages:
                 print(f"\n### DEBUG - Result before Regex - {raw_result}")
-                if result[0]:
-                    print(f"### DEBUG - Result after Regex - Chunk 0: {result[0]}")
-                if result[1]:
-                    print(f"### DEBUG - Result after Regex - Chunk 1: {result[1]}")
-                if result[2]:
-                    print(f"### DEBUG - Result after Regex - Chunk 2: {result[2]}")
-                if result[3]:
-                    print(f"### DEBUG - Result after Regex - Chunk 3: {result[3]}")
+                for i, res in enumerate(result):
+                    print(f"### DEBUG - Result after Regex - Chunk {i}: {res}")
         except:
             pass
 
